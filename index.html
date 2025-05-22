@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DelishDine By Morfor Dudacus</title>
+  <!-- Font Awesome CDN Link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    
+header {
+  background-color:#333;
+  color: #fff;
+  margin-top:0;
+  padding: 1.3rem 3rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.head img {
+  margin-top:0;
+  width: 60px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.head h1 {
+  font-size: 1.8rem;
+  color: #d35400;
+  display: inline-block;
+  margin: 0;
+}
+
+  
+.head p {
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+}
+
+.full-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.full-nav a {
+  margin-top:30px;
+  color:#fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+.full-nav a:hover {
+  color:lime;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 1rem;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color:#d35400;
+  transition: all 0.3s ease;
+}
+
+.mobile-drawer {
+  background-color: #333;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-drawer a {
+  color: white;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  font-weight: bold;
+}
+.mobile-drawer a:hover {
+  background-color: #333;
+}
+
+
+.mobile-drawer.show {
+  max-height: 300px;
+}
+  
+@media (max-width: 768px) {
+  .full-nav {
+    display: flex;
+    gap: 1rem;
+  }
+  .full-nav a:nth-child(n+3) {
+    display: none; /* Hide Services & Contact */
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+  
+      .hero {
+  position: relative;
+  background: url('your-image.jpg') center/cover no-repeat;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(2px);
+  transform: scale(1.1); 
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color:#000;
+  text-align: center;
+  padding-top: 0%;
+}
+
+    .hero {
+      background: url('hero.png') no-repeat center center/cover;
+      padding: 4rem 2rem;
+      color: #000;
+      text-align: center;
+      background-color: #333;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 1rem;
+      color:#000;
+      font-weight:bold;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom:20px;
+      font-weight:bold;
+    }
+
+  #Cta {
+  background-color:blue; 
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+#Cta:hover {
+  background-color: #3e8e41;
+}
+
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+
+  
+  footer {
+  margin: 0 !important;
+  padding: 40px 20px 10px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  background: #1a1a1a;
+  color: #d35400;
+  bottom:0;
+ float:bottom;
+  z-index:10000;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.footer-container {
+  margin-left:-100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  width:100%;
+  margin: auto;
+}
+
+  .footer-column {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  color: #e67e22;
+  margin-bottom: 15px;
+}
+
+.footer-column p,
+.footer-column li,
+.footer-column a {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #e67e22;
+  font-size: 30px;
+  transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: orange;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+    button {
+      background: gold;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: transform 0.3s ease;
+    }
+  
+  .food-menu {
+  padding: 40px 20px;
+  background-color: #fdf6f2;
+  text-align: center;
+}
+
+.menu-title {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #e85a4f;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.food-card {
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 230px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.6s ease-in;
+}
+
+.food-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.food-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.food-card p {
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  padding: 2px;
+  color: #333;
+}
+  
+  .food-card .price {
+  color: #e85a4f;
+  font-weight: bold;
+  margin: 5px 0;
+  margin-top:0;
+  font-size: 1.1em;
+}
+
+.food-card button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.food-card button:hover {
+  background-color: #d14d44;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+  .why-choose-us {
+  padding: 60px 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 40px;
+  color: #d35400;
+}
+
+.reasons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.reason-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 30px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason-card img {
+  width: 140px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.reason-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+
+.reason-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.reason-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+  
+  .load-more-wrapper {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.load-more-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  background-color: #e67e22;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.load-more-btn:hover {
+  background-color: #d35400;
+  transform: scale(1.05);
+}
+  
+  .menu-icon {
+  font-size: 28px;
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  color: #000;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-icon:hover {
+  background-color: #f5f5f5;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="header-container">
+    <div class="head">
+      <img src="logo.png" alt="logo">
+      <h1>DelishDine</h1>
+      </div>
+    <nav class="full-nav">
+      <a href="index.html">My order</a>
+      <a href="about.html" style="text-decoration: underline; color:#d35400;">Home</a>
+      <a href="services.html">Menu</a>
+      <a href="contact.html">About</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="menu-icon">&#9776;</div>
+    </div>
+  </div>
+  <nav id="mobileNav" class="mobile-drawer">
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+  
+  <section class="hero">
+    <div class="hero-content">
+    <h1>Made for your Taste</h1>
+    <p  >We serve meals with heart—fresh ingredients, authentic recipes, and generous portions that satisfy every craving.</p>
+      <a id="Cta" href="#">Start Eating</a>
+ </div>
+  </section>
+ 
+  <!-- Food Menu Section -->
+<section class="food-menu">
+  <h2 class="menu-title">Our Special Dishes</h2>
+  <div class="food-grid">
+    <div class="food-card">
+      <img src="image1.jpg" alt="Food Item">
+      <p>Irish Potatoes</p>
+      <p class="price">3,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image2.jpg" alt="Food Item">
+      <p>Egusi & Shito Sauce</p>
+       <p class="price">2,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image3.jpg" alt="Food Item">
+      <p>Bread & Milky spice</p>
+      <p class="price">1,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image4.jpg" alt="Food Item">
+      <p>Fried rice & Turkey</p>
+      <p class="price">2,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image5.jpg" alt="Food Item">
+      <p>Milky Donuts</p>
+      <p class="price">5,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image6.jpg" alt="Food Item">
+      <p> Spinach stew</p>
+      <p class="price">2,500 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image7.jpg" alt="Food Item">
+      <p>Chicken Shawama wrap</p>
+      <p class="price">2,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image8.jpg" alt="Food Item">
+      <p>Kumkum & Egusi soup </p>
+      <p class="price">4,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image9.jpg" alt="Food Item">
+      <p>Cookie & Plantain</p>
+      <p class="price">2,000 FCFA</p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image10.jpg" alt="Food Item">
+      <p>Plaintain & Plum</p>
+      <p class="price">5000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image11.jpg" alt="Food Item">
+      <p>Achu & Yellow soup</p>
+      <p class="price">5,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image12.jpg" alt="Food Item">
+      <p>Fufu & Eru</p>
+      <p class="price">3,500 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image13.jpg" alt="Food Item">
+      <p>Fried beens</p>
+      <p class="price">1,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image14.jpg" alt="Food Item">
+      <p> Waakye &Shito Saurce</p>
+      <p class="price">3,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image15.jpg" alt="Food Item">
+      <p>Cow meat peppe Stew</p>
+      <p class="price">4,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image16.jpg" alt="Food Item">
+      <p>Pounded rice & beens souce</p>
+      <p class="price">3,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    
+   <div class="food-card">
+      <img src="image17.jpg" alt="Food Item">
+      <p>Indomi and kati kati</p>
+      <p class="price">3,000 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image18.jpg" alt="Food Item">
+      <p>Jellof Rice & meat</p>
+      <p class="price">1,500 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    <div class="food-card">
+      <img src="image19.jpg" alt="Food Item">
+      <p>Corn Chaff</p>
+      <p class="price">3,500 FCFA </p>
+      <button>Order Now</button>
+    </div>
+    
+      <div class="load-more-wrapper">
+    <button class="load-more-btn">See Full Menu</button>
+  </div>
+    </div>
+</section>
+  
+  <section class="why-choose-us">
+  <h2>Why Choose Us</h2>
+  <div class="reasons-container">
+    <div class="reason-card">
+      <img src="fast.png" alt="Fast Delivery">
+      <h3>Fast Delivery</h3>
+      <p>Your meals delivered hot and fresh in no time, every time.</p>
+    </div>
+    <div class="reason-card">
+      <img src="fresh-ingridients.png" alt="Fresh Ingredients">
+      <h3>Fresh Ingredients</h3>
+      <p>We use only fresh, local ingredients to ensure unbeatable taste.</p>
+    </div>
+    <div class="reason-card">
+      <img src="affordable.png" alt="Affordable Prices">
+      <h3>Affordable Prices</h3>
+      <p>Great meals shouldn’t break the bank. We keep it delicious and affordable.</p>
+    </div>
+    <div class="reason-card">
+      <img src="taste.png" alt="Delicious Taste">
+      <h3>Delicious Taste</h3>
+      <p>From spicy favorites to sweet treats, every bite is pure satisfaction.</p>
+    </div>
+  </div>
+</section>
+  
+  <footer class="footer">
+   
+  <div class="footer-container">
+    <div class="footer-column about">
+  <h3>DelishDine Restaurant Services</h3>
+  <p>Serving delicious meals with love and speed. From our kitchen to your door, we blend taste and convenience to satisfy every craving, every time.</p>
+</div>
+
+    <div class="footer-column contact">
+      <h4>Contact Us</h4>
+      <p>Email:morfordidacus@gmail.com</p>
+      <p>Phone: +237675874638</p>
+      <p>Address: Remote, Global Reach</p>
+    </div>
+
+    <div class="footer-column legal">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column social">
+      <h4>Connect With Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div> 
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Morfor Didacus . All rights reserved.</p>
+  </div>
+  </footer>
+  
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileNav").classList.toggle("show");
+  }
+</script>
+</body>
+</html>
